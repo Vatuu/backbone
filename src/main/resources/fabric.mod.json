@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "backbone",
+  "version": "${version}",
+  "name": "Backbone",
+  "description": "",
+  "authors": [ "Vatuu" ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/backbone/icon.png",
+  "environment": "server",
+  "entrypoints": { "server": [ "dev.vatuu.backbone.Backbone" ] },
+  "mixins": [
+    "backbone.mixins.json",
+    "events.mixins.json",
+    "meta.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "minecraft": "1.16.5"
+  }
+}

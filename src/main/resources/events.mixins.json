@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.vatuu.backbone.events.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "server": [
+    "MinecraftServerMixin",
+    "ServerWorldMixin",
+    "CommandManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

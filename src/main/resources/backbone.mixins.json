@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.vatuu.backbone.extensions.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "server": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

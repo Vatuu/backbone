@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.vatuu.backbone.entity.meta.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "server": [
+    "EntityMixin",
+    "LivingEntityMixin",
+    "MobEntityMixin",
+    "PassiveEntityMixin",
+    "AnimalEntityMixin",
+    "DecorationEntityMixin",
+
+    "ItemFrameEntityMixin",
+    "ArmorStandEntityMixin",
+    "LeashKnotEntityMixin",
+    "PaintingEntityMixin",
+    "EndCrystalEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
