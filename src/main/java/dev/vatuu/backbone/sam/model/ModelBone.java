@@ -5,6 +5,7 @@ import com.mojang.datafixers.util.Pair;
 import dev.vatuu.backbone.entity.meta.ArmorStandEntityMeta;
 import dev.vatuu.backbone.entity.meta.base.EntityMeta;
 import dev.vatuu.backbone.item.meta.ItemMeta;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.item.Item;
@@ -121,11 +122,9 @@ public class ModelBone {
         return location.add(0 ,1 ,0);
     }
     private ItemStack getStackCustomModel()  {
-        ItemStack stack = new ItemStack(this.modelMaterial);
-        ItemMeta.Builder.create(this.modelMaterial)
-                .setCustomModel(this.customModelValue)
-                .applyToStack(stack);
-        return stack;
+        return ItemMeta.of(this.modelMaterial)
+                .setCustomModelValue(customModelValue)
+                .apply();
     }
 
     private void commandCreate(ServerPlayerEntity p) {
