@@ -1,14 +1,10 @@
 package dev.vatuu.backbone.item.meta;
 
 import com.mojang.datafixers.util.Pair;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.util.DyeColor;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 
 public interface BannerItemMeta extends ItemMeta<BannerItemMeta> {
 

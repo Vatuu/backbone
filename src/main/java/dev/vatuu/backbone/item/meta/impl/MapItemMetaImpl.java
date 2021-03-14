@@ -2,7 +2,6 @@ package dev.vatuu.backbone.item.meta.impl;
 
 import dev.vatuu.backbone.item.meta.MapItemMeta;
 import dev.vatuu.backbone.maps.MapView;
-import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
 
 public class MapItemMetaImpl extends ItemMetaImpl<MapItemMeta> implements MapItemMeta {

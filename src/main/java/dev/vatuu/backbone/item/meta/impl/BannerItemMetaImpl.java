@@ -5,10 +5,14 @@ import dev.vatuu.backbone.item.meta.BannerItemMeta;
 import dev.vatuu.backbone.utils.Codecs;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.util.DyeColor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class BannerItemMetaImpl extends ItemMetaImpl<BannerItemMeta> implements BannerItemMeta {
 

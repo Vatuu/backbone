@@ -4,9 +4,9 @@
   "package": "dev.vatuu.backbone.item.meta.extensions.mixin",
   "compatibilityLevel": "JAVA_8",
   "server": [
+    "BannerItemMixin",
     "ItemMixin",
-    "MapItemMixin",
-    "BannerItemMixin"
+    "MapItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

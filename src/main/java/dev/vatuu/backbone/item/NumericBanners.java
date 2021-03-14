@@ -3,7 +3,6 @@ package dev.vatuu.backbone.item;
 import com.google.common.collect.Lists;
 import dev.vatuu.backbone.item.meta.BannerItemMeta;
 import dev.vatuu.backbone.item.meta.ItemMeta;
-import dev.vatuu.backbone.item.meta.extensions.mixin.BannerItemMixin;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
