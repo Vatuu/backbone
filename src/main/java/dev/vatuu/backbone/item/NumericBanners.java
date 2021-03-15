@@ -1,83 +1,56 @@
 package dev.vatuu.backbone.item;
 
-import com.google.common.collect.Lists;
+import com.google.common.collect.ImmutableMap;
 import dev.vatuu.backbone.item.meta.BannerItemMeta;
 import dev.vatuu.backbone.item.meta.ItemMeta;
-import net.minecraft.block.BannerBlock;
 import net.minecraft.block.entity.BannerPattern;
-import net.minecraft.item.BannerItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.DyeColor;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
-//TODO Holy shit, uncurse this!
 public enum NumericBanners {
-        ZERO(Lists.newArrayList(
-                BannerPattern.STRIPE_TOP, BannerPattern.STRIPE_RIGHT, BannerPattern.STRIPE_BOTTOM,
-                BannerPattern.STRIPE_LEFT, BannerPattern.BORDER),
-                Lists.newArrayList(true, true, true, true, false)
-        ),
-        ONE(Lists.newArrayList(
-                BannerPattern.SQUARE_TOP_LEFT, BannerPattern.TRIANGLES_TOP, BannerPattern.STRIPE_CENTER,
-                BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, false)
-        ),
-        TWO(Lists.newArrayList(
-                BannerPattern.STRIPE_TOP, BannerPattern.RHOMBUS_MIDDLE, BannerPattern.STRIPE_DOWNLEFT,
-                BannerPattern.STRIPE_BOTTOM, BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, true, false)
-        ),
-        THREE(Lists.newArrayList(
-                BannerPattern.STRIPE_MIDDLE, BannerPattern.STRIPE_LEFT, BannerPattern.STRIPE_BOTTOM,
-                BannerPattern.STRIPE_RIGHT, BannerPattern.STRIPE_TOP, BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, true, true, false)
-        ),
-        FOUR(Lists.newArrayList(
-                BannerPattern.STRIPE_LEFT, BannerPattern.HALF_HORIZONTAL_MIRROR, BannerPattern.STRIPE_RIGHT,
-                BannerPattern.STRIPE_MIDDLE, BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, true, false)
-        ),
-        FIVE(Lists.newArrayList(
-                BannerPattern.STRIPE_BOTTOM, BannerPattern.STRIPE_DOWNLEFT, BannerPattern.CURLY_BORDER,
-                BannerPattern.SQUARE_BOTTOM_LEFT, BannerPattern.STRIPE_TOP, BannerPattern.BORDER),
-                Lists.newArrayList(true, true, false, true, true, false)
-        ),
-        SIX(Lists.newArrayList(
-                BannerPattern.STRIPE_BOTTOM, BannerPattern.STRIPE_RIGHT, BannerPattern.HALF_HORIZONTAL,
-                BannerPattern.STRIPE_MIDDLE, BannerPattern.STRIPE_TOP, BannerPattern.STRIPE_LEFT, BannerPattern.BORDER),
-                Lists.newArrayList(true, true, false, true, true, true, false)
-        ),
-        SEVEN(Lists.newArrayList(
-                BannerPattern.STRIPE_TOP, BannerPattern.DIAGONAL_RIGHT, BannerPattern.STRIPE_DOWNLEFT,
-                BannerPattern.SQUARE_BOTTOM_LEFT, BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, true, false)
-        ),
-        EIGHT(Lists.newArrayList(
-                BannerPattern.STRIPE_TOP, BannerPattern.STRIPE_LEFT, BannerPattern.STRIPE_MIDDLE,
-                BannerPattern.STRIPE_BOTTOM, BannerPattern.STRIPE_RIGHT, BannerPattern.BORDER),
-                Lists.newArrayList(true, true, true, true, true, false)
-        ),
-        NINE(Lists.newArrayList(
-                BannerPattern.STRIPE_LEFT, BannerPattern.HALF_HORIZONTAL_MIRROR, BannerPattern.STRIPE_MIDDLE,
-                BannerPattern.STRIPE_TOP, BannerPattern.STRIPE_RIGHT, BannerPattern.STRIPE_BOTTOM, BannerPattern.BORDER),
-                Lists.newArrayList(true, false, true, true, true, true, false));
+        ZERO(ImmutableMap.of(BannerPattern.STRIPE_TOP, true, BannerPattern.STRIPE_RIGHT, true,
+                BannerPattern.STRIPE_BOTTOM, true, BannerPattern.STRIPE_LEFT, true,
+                BannerPattern.BORDER, false)),
+        ONE(ImmutableMap.of(BannerPattern.SQUARE_TOP_LEFT, true, BannerPattern.TRIANGLES_TOP, false,
+                BannerPattern.STRIPE_CENTER, true, BannerPattern.BORDER, false)),
+        TWO(ImmutableMap.of(BannerPattern.STRIPE_TOP, true, BannerPattern.RHOMBUS_MIDDLE, false,
+                BannerPattern.STRIPE_DOWNLEFT, true, BannerPattern.STRIPE_BOTTOM, true,
+                BannerPattern.BORDER, false)),
+        THREE(new ImmutableMap.Builder<BannerPattern, Boolean>().put(BannerPattern.STRIPE_MIDDLE, true).put(BannerPattern.STRIPE_LEFT, false)
+                .put(BannerPattern.STRIPE_BOTTOM, true).put(BannerPattern.STRIPE_TOP, true)
+                .put(BannerPattern.STRIPE_RIGHT, true).put(BannerPattern.BORDER, false).build()),
+        FOUR(ImmutableMap.of(BannerPattern.STRIPE_LEFT, true, BannerPattern.HALF_HORIZONTAL_MIRROR, false,
+                BannerPattern.STRIPE_RIGHT, true, BannerPattern.STRIPE_MIDDLE, true,
+                BannerPattern.BORDER, false)),
+        FIVE(new ImmutableMap.Builder<BannerPattern, Boolean>().put(BannerPattern.STRIPE_BOTTOM, true).put(BannerPattern.STRIPE_DOWNRIGHT, true)
+                .put(BannerPattern.CURLY_BORDER, false).put(BannerPattern.SQUARE_BOTTOM_LEFT, true)
+                .put(BannerPattern.STRIPE_TOP, true).put(BannerPattern.BORDER, false).build()),
+        SIX(new ImmutableMap.Builder<BannerPattern, Boolean>().put(BannerPattern.STRIPE_BOTTOM, true).put(BannerPattern.STRIPE_RIGHT, true)
+                .put(BannerPattern.HALF_HORIZONTAL, false).put(BannerPattern.STRIPE_MIDDLE, true)
+                .put(BannerPattern.STRIPE_TOP, true).put(BannerPattern.STRIPE_LEFT, true)
+                .put(BannerPattern.BORDER, false).build()),
+        SEVEN(ImmutableMap.of(BannerPattern.STRIPE_TOP, true, BannerPattern.DIAGONAL_RIGHT, false,
+                BannerPattern.STRIPE_DOWNLEFT, true, BannerPattern.SQUARE_BOTTOM_LEFT, true,
+                BannerPattern.BORDER, false)),
+        EIGHT(new ImmutableMap.Builder<BannerPattern, Boolean>().put(BannerPattern.STRIPE_TOP, true).put(BannerPattern.STRIPE_LEFT, true)
+                .put(BannerPattern.STRIPE_MIDDLE, true).put(BannerPattern.STRIPE_BOTTOM, true)
+                .put(BannerPattern.STRIPE_RIGHT, true).put(BannerPattern.BORDER, false).build()),
+        NINE(new ImmutableMap.Builder<BannerPattern, Boolean>().put(BannerPattern.STRIPE_LEFT, true).put(BannerPattern.HALF_HORIZONTAL_MIRROR, false)
+                .put(BannerPattern.STRIPE_MIDDLE, true).put(BannerPattern.STRIPE_TOP, true)
+                .put(BannerPattern.STRIPE_RIGHT, true).put(BannerPattern.STRIPE_BOTTOM, true)
+                .put(BannerPattern.BORDER, false).build());
 
-        private final List<BannerPattern> patterns;
-        private final List<Boolean> isFontPattern;
+        private final Map<BannerPattern, Boolean> patterns;
 
-        NumericBanners(List<BannerPattern> patterns, List<Boolean> isFont) {
+        NumericBanners(Map<BannerPattern, Boolean> patterns) {
             this.patterns = patterns;
-            this.isFontPattern = isFont;
         }
 
         public ItemStack getBannerItem(DyeColor background, DyeColor foreground) {
             BannerItemMeta meta = ItemMeta.of(BannerItemMeta.byColor(background));
-            for (int i = 0; i < patterns.size(); i++)
-                meta.addPattern(patterns.get(i), isFontPattern.get(i) ? foreground : background);
+            patterns.forEach((p, f) -> meta.addPattern(p, f ? foreground : background));
             return meta.apply();
         }
 
