@@ -3,13 +3,18 @@ package dev.vatuu.backbone.item;
 import com.google.common.collect.Lists;
 import dev.vatuu.backbone.item.meta.BannerItemMeta;
 import dev.vatuu.backbone.item.meta.ItemMeta;
+import net.minecraft.block.BannerBlock;
 import net.minecraft.block.entity.BannerPattern;
+import net.minecraft.item.BannerItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.DyeColor;
 
+import java.util.HashMap;
 import java.util.List;
 
+//TODO Holy shit, uncurse this!
 public enum NumericBanners {
         ZERO(Lists.newArrayList(
                 BannerPattern.STRIPE_TOP, BannerPattern.STRIPE_RIGHT, BannerPattern.STRIPE_BOTTOM,
@@ -70,7 +75,7 @@ public enum NumericBanners {
         }
 
         public ItemStack getBannerItem(DyeColor background, DyeColor foreground) {
-            BannerItemMeta meta = ItemMeta.of(Items.WHITE_BANNER);
+            BannerItemMeta meta = ItemMeta.of(BannerItemMeta.byColor(background));
             for (int i = 0; i < patterns.size(); i++)
                 meta.addPattern(patterns.get(i), isFontPattern.get(i) ? foreground : background);
             return meta.apply();
