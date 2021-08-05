@@ -4,6 +4,7 @@ import dev.vatuu.backbone.Backbone;
 import dev.vatuu.backbone.events.ServerTickEvents;
 import dev.vatuu.backbone.sam.model.ServerAnimatableModel;
 import dev.vatuu.backbone.utils.MathUtils;
+import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -64,7 +65,6 @@ public final class SamManager {
 
     private void registerListener() {
         ServerTickEvents.START_SERVER_TICK.register(this::updateTask);
-        ServerTickEvents.END_SERVER_TICK.register(this::updateTask);
     }
 
     private void updateTask(MinecraftServer server) {

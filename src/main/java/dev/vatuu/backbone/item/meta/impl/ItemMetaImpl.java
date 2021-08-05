@@ -85,6 +85,11 @@ public class ItemMetaImpl<S extends ItemMeta<S>> implements ItemMeta<S> {
     }
 
     @Override
+    public S addAttribute() {
+        return (S)this;
+    }
+
+    @Override
     public int getRepairCost() { return stack.getRepairCost(); }
     @Override
     public S setRepairCost(int cost) {

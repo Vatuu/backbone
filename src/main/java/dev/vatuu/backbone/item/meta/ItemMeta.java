@@ -30,6 +30,8 @@ public interface ItemMeta<S extends ItemMeta<S>> {
     S addEnchantment(Enchantment e, int level);
     S removeEnchantment(Enchantment e);
 
+    S addAttribute();
+
     int getRepairCost();
     S setRepairCost(int cost);
 
